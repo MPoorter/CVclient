@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 
-public class JobSearcher implements Serializable{
+public class Applicant implements Serializable{
 
 	private String name;
 	
@@ -27,10 +27,10 @@ public class JobSearcher implements Serializable{
 	private String profile;
 	
 
-	Collection <Study> studies;
+	private Collection <Study> studies;
 	
 
-	Collection <Work> workExperiences;
+	private Collection <Work> workExperiences;
 	
 	
 	private byte[] skills;

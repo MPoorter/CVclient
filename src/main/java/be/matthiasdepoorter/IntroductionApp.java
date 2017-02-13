@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import be.matthiasdepoorter.domain.Degree;
-import be.matthiasdepoorter.domain.JobSearcher;
+import be.matthiasdepoorter.domain.Applicant;
 import be.matthiasdepoorter.domain.Study;
 import be.matthiasdepoorter.domain.Work;
 
@@ -35,7 +35,7 @@ public class IntroductionApp {
 		ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(IntroductionApp.class);
 		CVService c = ctx.getBean("Introduce", CVService.class);
 		try {
-			c.getAuthor();
+			c.getApplicant();
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		} finally{
@@ -53,8 +53,8 @@ class CVService {
 	@Autowired
 	private RestTemplate template;
 
-	public void getAuthor() throws IOException {
-		JobSearcher a = template.getForObject(baseURL + "/Rest/{0}", JobSearcher.class, "Matthias_De_Poorter");
+	public void getApplicant() throws IOException {
+		Applicant a = template.getForObject(baseURL + "/Rest/{0}", Applicant.class, "Matthias_De_Poorter");
 		System.out.println("\n"+a);
 		System.out.println("\nStudies:");
 		this.study(s -> s.getDegree(), a.getStudies());
