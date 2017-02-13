@@ -55,7 +55,7 @@ class CVService {
 
 	public void getAuthor() throws IOException {
 		JobSearcher a = template.getForObject(baseURL + "/Rest/{0}", JobSearcher.class, "Matthias_De_Poorter");
-		System.out.println(a);
+		System.out.println("\n"+a);
 		System.out.println("\nStudies:");
 		this.study(s -> s.getDegree(), a.getStudies());
 		System.out.println("\nWork experience:");
