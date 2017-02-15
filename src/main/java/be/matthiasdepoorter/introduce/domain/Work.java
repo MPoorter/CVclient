@@ -1,4 +1,4 @@
-package be.matthiasdepoorter.domain;
+package be.matthiasdepoorter.introduce.domain;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -15,6 +15,8 @@ public class Work implements Comparable<Work> {
 	private String endDate;
 
 	private boolean relevant;
+	
+	private String information;
 
 	public String getTitle() {
 		return title;
@@ -56,18 +58,22 @@ public class Work implements Comparable<Work> {
 		this.relevant = relevant;
 	}
 
+	public String getInformation() {
+		return information;
+	}
+
+	public void setInformation(String information) {
+		this.information = information;
+	}
+
 	@Override
 	public String toString() {
-//		return this.getStartDate().format(DateTimeFormatter.ofPattern("yyyy"))
-//				+ ((this.getStartDate().getYear() != this.getEndDate().getYear())
-//						? " - "+ this.getEndDate().format(DateTimeFormatter.ofPattern("yyyy")) : "\t")
-//				+ title + company;
-		return this.startDate+this.endDate + this.title + this.company;
+		return this.startDate+this.endDate + this.title + this.company + this.information;
 	}
 
 	@Override
 	public int compareTo(Work o) {
-		return o.endDate.compareTo(this.endDate)+o.startDate.compareTo(this.startDate);
+		return o.startDate.compareTo(this.startDate)+o.endDate.compareTo(this.endDate);
 	}
 
 }

@@ -1,4 +1,4 @@
-package be.matthiasdepoorter;
+package be.matthiasdepoorter.introduce;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -18,10 +18,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import be.matthiasdepoorter.domain.Degree;
-import be.matthiasdepoorter.domain.Applicant;
-import be.matthiasdepoorter.domain.Study;
-import be.matthiasdepoorter.domain.Work;
+import be.matthiasdepoorter.introduce.domain.Applicant;
+import be.matthiasdepoorter.introduce.domain.Degree;
+import be.matthiasdepoorter.introduce.domain.Study;
+import be.matthiasdepoorter.introduce.domain.Work;
 
 @SpringBootApplication
 public class IntroductionApp {

@@ -1,4 +1,4 @@
-package be.matthiasdepoorter.domain;
+package be.matthiasdepoorter.introduce.domain;
 
 public class Study {
 
