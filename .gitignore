@@ -2,3 +2,7 @@
 /target
 .classpath
 .project
+.idea/
+testCVclient.iml
+CV_MatthiasDePoorter.txt
+logging.log
