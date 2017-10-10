@@ -1,5 +1,6 @@
 # CVclient
-Client for CV REST Controller
+Client for CV Controller
+Created as a bit of fun instead of a regular CV
 Pom plugins:
   spring-boot-maven-plugin
 Pom Spring parent:
