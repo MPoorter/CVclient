@@ -1,8 +1,8 @@
 package be.matthiasdepoorter.introduce.domain;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.sql.Date;
 
 public class Work implements Comparable<Work> {
 
@@ -10,12 +10,12 @@ public class Work implements Comparable<Work> {
 
 	private String company;
 
-	private String startDate;
+	private Date startDate;
 
-	private String endDate;
+	private Date endDate;
 
 	private boolean relevant;
-	
+
 	private String information;
 
 	public String getTitle() {
@@ -35,18 +35,18 @@ public class Work implements Comparable<Work> {
 	}
 
 	public String getStartDate() {
-		return startDate;
+		return startDate.toLocalDate().format(DateTimeFormatter.ofPattern("M/yy"));
 	}
 
-	public void setStartDate(String startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
 	public String getEndDate() {
-		return endDate;
+		return endDate.toLocalDate().format(DateTimeFormatter.ofPattern("M/yy"));
 	}
 
-	public void setEndDate(String endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
@@ -68,12 +68,11 @@ public class Work implements Comparable<Work> {
 
 	@Override
 	public String toString() {
-		return this.startDate+this.endDate + this.title + this.company + this.information;
+		return this.getStartDate() + "-" + this.getEndDate() + this.title + this.company + this.information;
 	}
 
 	@Override
 	public int compareTo(Work o) {
-		return o.startDate.compareTo(this.startDate)+o.endDate.compareTo(this.endDate);
+		return o.startDate.compareTo(this.startDate);
 	}
-
 }

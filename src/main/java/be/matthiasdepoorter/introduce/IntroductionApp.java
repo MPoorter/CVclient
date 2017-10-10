@@ -74,7 +74,7 @@ class CVService {
 			writer.write(this.study(Study::getDegree, a.getStudies()).getBytes());
 			writer.write("\n\nWork experience:\n".getBytes());
 			writer.write(this.work(a.getWorkExperiences()).getBytes());
-			writer.write("\n\nSkills:".getBytes());
+			writer.write("\n\nSkills:\n".getBytes());
 			writer.write(this.skills(a.getSkills()).getBytes());
 		}
 	}
